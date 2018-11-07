@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form submit</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- <form action="action.php"> -->
+        <input type="text" placeholder="firstName" name="firstName">
+        <input type="text" placeholder="lastName" name="lastName">
+        <input type="number" placeholder="Age" name="age">
+        <input type="number" placeholder="phone" name="phone">
+        <select name="childern" id="">
+            <option value="default">how many Childern you have</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <input type="text" placeholder="City" name="city">
+        <input type="text" placeholder="state" name="state">
+        <input type="text" placeholder="country" name="country">
+
+        <input type="submit" name="submit" value="submit" onclick="validate()">        
+    <!-- </form> -->
+    <div id="myTable">
+
+    </div>
+        <script>
+            function validate(){
+                var fn = document.getElementsByName('firstName')[0].value;
+                var ln = document.getElementsByName('lastName')[0].value;
+                var age = document.getElementsByName('age')[0].value;
+                var phone = document.getElementsByName('phone')[0].value;
+                var childern = document.getElementsByName('childern')[0].value;
+                var city = document.getElementsByName('city')[0].value;
+                var state = document.getElementsByName('state')[0].value;
+                var country = document.getElementsByName('country')[0].value;
+                
+
+
+                function person(fn, ln, phone, age, childern, city, state, country){
+                this.firstName = fn;
+                this.lastName = ln;
+                this.ag = age;                
+                this.phone = phone;
+                this.child = childern;
+                this.address = [
+                    this.city = city,
+                    this.country = country,
+                    this.state = state
+                ]
+            }  
+            
+
+
+            var personDtls = new person(fn, ln, phone, age, childern, city,state, country);
+            console.log(personDtls);            
+            }
+            
+        </script>
+</body>
+</html>
